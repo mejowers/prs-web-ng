@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
+import { User } from 'src/app/model/user.class';
+import { UserService } from 'src/app/service/user.service';
 
 @Component({
   selector: 'app-user-detail',
@@ -6,10 +9,34 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user-detail.component.css']
 })
 export class UserDetailComponent implements OnInit {
+  title: string = "User-Detail";
+  user: User = new User();
+  userId: number = 0;
 
-  constructor() { }
+  constructor(
+    private userSvc: UserService,
+    private router: Router,
+    private route: ActivatedRoute
+  ) { }
 
   ngOnInit(): void {
+    this.route.params.subscribe(parms => this.userId = parms["id"]);
+    this.userSvc.get(this.userId).subscribe(
+      resp => { this.user = resp as User;},
+            err=> {console.log(err);}
+    );
   }
 
+  delete() {
+    this.userSvc.delete(this.userId).subscribe(
+      resp => {
+        this.user = resp as User;
+        this.router.navigateByUrl('/user-list');
+      },
+      err => {
+        console.log(err);
+      }
+    );
+  }
 }
+
