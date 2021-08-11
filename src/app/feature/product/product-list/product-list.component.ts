@@ -10,16 +10,20 @@ import { ProductService } from 'src/app/service/product.service';
 export class ProductListComponent implements OnInit {
 
   products: Product[] = [];
-  title: string = "Product List"
+  title: string = "Product List";
 
-  constructor(private productSvc: ProductService) { }
+  constructor(
+    private productSvc: ProductService
+    ) { }
 
   ngOnInit(): void {
     this.productSvc.list().subscribe(
-      resp => {this.products = resp as Product[];
-              console.log("list of products:", this.products);},
-              err => {console.log(err);}
+      resp => {
+        this.products = resp as Product[];
+              console.log("list of products:", this.products);
+            },
+              err => {console.log(err);
+              }
     );
   }
-
 }

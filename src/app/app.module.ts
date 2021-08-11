@@ -19,6 +19,7 @@ import { ProductCreateComponent } from './feature/product/product-create/product
 import { ProductEditComponent } from './feature/product/product-edit/product-edit.component';
 import { ProductDetailComponent } from './feature/product/product-detail/product-detail.component';
 import { UserLoginComponent } from './feature/user/user-login/user-login.component';
+import { RequestListComponent } from './feature/request/request-list/request-list.component';
 
 
 @NgModule({
@@ -37,7 +38,8 @@ import { UserLoginComponent } from './feature/user/user-login/user-login.compone
     ProductCreateComponent,
     ProductEditComponent,
     ProductDetailComponent,
-    UserLoginComponent
+    UserLoginComponent,
+    RequestListComponent
   ],
   imports: [
     BrowserModule,

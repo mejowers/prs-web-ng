@@ -4,6 +4,7 @@ import { ProductCreateComponent } from './feature/product/product-create/product
 import { ProductDetailComponent } from './feature/product/product-detail/product-detail.component';
 import { ProductEditComponent } from './feature/product/product-edit/product-edit.component';
 import { ProductListComponent } from './feature/product/product-list/product-list.component';
+import { RequestListComponent } from './feature/request/request-list/request-list.component';
 import { UserCreateComponent } from './feature/user/user-create/user-create.component';
 import { UserDetailComponent } from './feature/user/user-detail/user-detail.component';
 import { UserEditComponent } from './feature/user/user-edit/user-edit.component';
@@ -29,6 +30,7 @@ const routes: Routes = [
   { path:'product-create', component:ProductCreateComponent},
   { path:'product-edit/:id', component:ProductEditComponent},
   { path:'product-detail/:id', component:ProductDetailComponent},
+  { path:'request-list', component:RequestListComponent},
   { path:'**', component:UserListComponent}
 ];
 
