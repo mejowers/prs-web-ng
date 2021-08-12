@@ -20,8 +20,9 @@ export class UserEditComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute) { }
 
-  ngOnInit(): void {  this.route.params.subscribe(parms => this.userId = parms["id"]);
-  this.userSvc.get(this.userId).subscribe(
+  ngOnInit(): void {  
+    this.route.params.subscribe(parms => this.userId = parms["id"]);
+    this.userSvc.get(this.userId).subscribe(
     resp => { this.user = resp as User;},
           err=> {console.log(err);}
   );
