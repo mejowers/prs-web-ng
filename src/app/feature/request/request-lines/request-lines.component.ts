@@ -16,6 +16,7 @@ export class RequestLinesComponent implements OnInit {
   requestId: number = 0;
   request: Request = new Request();
   lineItems: LineItem[] = [];
+  title2: string = "Line Items";
   
 
   constructor(
@@ -41,5 +42,15 @@ export class RequestLinesComponent implements OnInit {
     );
 
   }
-
+  
+  save() {
+    console.log("Save request lines:",this.request);
+    this.requestSvc.create(this.request).subscribe(
+      resp => {
+        this.request = resp as Request;
+        this.router.navigateByUrl('/request-list');
+      },
+      err => { console.log(err) }
+    );
+  }
 }

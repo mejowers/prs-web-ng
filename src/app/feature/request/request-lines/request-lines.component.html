@@ -1,6 +1,6 @@
 <section class="heading">
     <span class="page-title font-weight-bold font-italic">{{title}}</span> |
-    <a routerLink='/request-lines'>
+    <a routerLink='/request-create'>
         <img width='20' height='20' src='assets/add-icon.png' title='Add New'>
     </a>
     </section>
@@ -23,8 +23,8 @@
     </tbody>
 </table>
 <section class="heading">
-    <span class="page-title font-weight-bold font-italic">{{title}}</span> |
-    <a routerLink='/request-lines'>
+    <span class="page-title font-weight-bold font-italic">[{{title2}}]</span> |
+    <a routerLink='/line-item-create/{{request.id}}'>
         <img width='20' height='20' src='assets/add-icon.png' title='Add New'>
     </a>
     </section>
@@ -57,4 +57,5 @@
         </tr>
     </tbody>
 </table>
+<span><button (click)="save()" class="btn btn-sm btn-primary">Submit</button></span>
 
