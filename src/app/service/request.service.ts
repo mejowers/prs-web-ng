@@ -1,4 +1,5 @@
 import { HttpClient } from '@angular/common/http';
+import { R3QueryMetadata } from '@angular/compiler';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Request } from '../model/request.class';
@@ -33,5 +34,9 @@ export class RequestService {
 
   delete(id: number): Observable<Request> {
     return this.http.delete(URL + "/" + id) as Observable<Request>;
+  }
+
+  submit(request: Request): Observable<Request> {
+    return this.http.put(URL + "/submit-review", request) as Observable<Request>;
   }
 }

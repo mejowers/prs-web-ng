@@ -18,6 +18,7 @@ export class RequestLinesComponent implements OnInit {
   lineItems: LineItem[] = [];
   lineItem: LineItem = new LineItem();
   title2: string = "Line Items";
+  submitBtnTitle: string = "Submit";
   
 
   constructor(
@@ -43,6 +44,16 @@ export class RequestLinesComponent implements OnInit {
     );
 
   }
+  status() {
+    console.log("Review request lines:", this.request);
+    this.requestSvc.submit(this.request).subscribe(
+      resp => {
+        this.request = resp as Request;
+        this.router.navigateByUrl('/request-list');
+      },
+      err => {console.log(err)}
+    );
+  }
   
   save() {
     console.log("Save request lines:",this.request);
@@ -54,6 +65,7 @@ export class RequestLinesComponent implements OnInit {
       err => { console.log(err) }
     );
   }
+
   delete(lineItemId: number) {
     console.log("delete line item:", lineItemId);
     this.lineItemSvc.delete(lineItemId).subscribe(
