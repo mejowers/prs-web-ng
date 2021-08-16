@@ -16,6 +16,7 @@ export class RequestLinesComponent implements OnInit {
   requestId: number = 0;
   request: Request = new Request();
   lineItems: LineItem[] = [];
+  lineItem: LineItem = new LineItem();
   title2: string = "Line Items";
   
 
@@ -53,4 +54,28 @@ export class RequestLinesComponent implements OnInit {
       err => { console.log(err) }
     );
   }
+  delete(lineItemId: number) {
+    console.log("delete line item:", lineItemId);
+    this.lineItemSvc.delete(lineItemId).subscribe(
+      resp => {
+        this.lineItem = resp as LineItem;
+        // refresh request
+        this.route.params.subscribe(parms => this.requestId = parms["id"]);
+        this.requestSvc.get(this.requestId).subscribe(
+          resp => { this.request = resp as Request;},
+                err=> {console.log(err);}
+        );
+
+        // get lines for request
+        this.route.params.subscribe(parms => this.requestId = parms["id"]);
+        this.lineItemSvc.getLinesForRequest(this.requestId).subscribe(
+          resp => { this.lineItems = resp as LineItem[];},
+                err=> {console.log(err);}
+        );
+        this.router.navigateByUrl('/request-lines/' + this.lineItem.request.id);
+      },
+      err => { console.log(err) }
+    );
+  }
+
 }

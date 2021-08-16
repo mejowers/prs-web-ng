@@ -50,9 +50,9 @@
                 <a routerLink='/line-item-edit/{{lineItem.id}}'>
                 <img width='20' height='20' src='assets/pencil-icon.png' title='Edit Line Item'>
                 </a> |
-                <a routerLink='/line-item/{{lineItem.id}}'>
-                <img width='20' height='20' src='assets/delete.jpg' title='Delete Line Item'>
-                </a>
+                <span><button (click)="delete(lineItem.id)" style="border: none"> <a>
+                    <img width='20' height='20' src='assets/delete.jpg' title='Delete Line Item'>
+                    </a></button></span>
         </td>
         </tr>
     </tbody>
