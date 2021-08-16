@@ -11,6 +11,8 @@ import { RequestDetailComponent } from './feature/request/request-detail/request
 import { RequestEditComponent } from './feature/request/request-edit/request-edit.component';
 import { RequestLinesComponent } from './feature/request/request-lines/request-lines.component';
 import { RequestListComponent } from './feature/request/request-list/request-list.component';
+import { RequestReviewComponent } from './feature/request/request-review/request-review.component';
+import { RequestApproveComponent } from './feature/request/request-approve/request-approve.component';
 import { UserCreateComponent } from './feature/user/user-create/user-create.component';
 import { UserDetailComponent } from './feature/user/user-detail/user-detail.component';
 import { UserEditComponent } from './feature/user/user-edit/user-edit.component';
@@ -41,8 +43,10 @@ const routes: Routes = [
   { path:'request-edit/:id', component:RequestEditComponent},
   { path:'request-detail/:id', component:RequestDetailComponent},
   { path:'request-lines/:id', component:RequestLinesComponent},
-  { path: 'line-item-create/:id', component:LineItemCreateComponent},
-  { path: 'line-item-edit/:id', component:LineItemEditComponent},
+  { path:'request-review', component:RequestReviewComponent},
+  { path:'request-approve/:id', component:RequestApproveComponent},
+  { path:'line-item-create/:id', component:LineItemCreateComponent},
+  { path:'line-item-edit/:id', component:LineItemEditComponent},
   { path:'**', component:UserListComponent}
 ];
 
