@@ -24,7 +24,7 @@ export class RequestEditComponent implements OnInit {
     ) { }
 
   ngOnInit(): void { 
-    
+  this.systemSvc.checkLogin();
   this.route.params.subscribe(parms => this.requestId = parms["id"]);
   this.requestSvc.get(this.requestId).subscribe(
     resp => { this.request = resp as Request;},

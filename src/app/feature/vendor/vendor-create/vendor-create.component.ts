@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Vendor } from 'src/app/model/vendor.class';
+import { SystemService } from 'src/app/service/system.service';
 import { VendorService } from 'src/app/service/vendor.service';
 
 @Component({
@@ -16,9 +17,12 @@ export class VendorCreateComponent implements OnInit {
 
   constructor(
     private vendorSvc:VendorService,
-    private router:Router) { }
+    private router:Router,
+    private systemSvc:SystemService
+    ) { }
 
   ngOnInit(): void {
+    this.systemSvc.checkLogin();
   }
 
   save() {

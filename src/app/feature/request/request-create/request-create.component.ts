@@ -22,6 +22,8 @@ export class RequestCreateComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.systemSvc.checkLogin();
+    
     //set logged in user in request
     this.request.user = this.systemSvc.loggedInUser;    
   }

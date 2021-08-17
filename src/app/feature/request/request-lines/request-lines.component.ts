@@ -4,6 +4,7 @@ import { LineItem } from 'src/app/model/line-item.class';
 import { Request } from 'src/app/model/request.class';
 import { LineItemService } from 'src/app/service/line-item.service';
 import { RequestService } from 'src/app/service/request.service';
+import { SystemService } from 'src/app/service/system.service';
 
 @Component({
   selector: 'app-request-lines',
@@ -25,10 +26,13 @@ export class RequestLinesComponent implements OnInit {
     private requestSvc: RequestService,
     private lineItemSvc: LineItemService,
     private router: Router,
+    private systemSvc: SystemService,
     private route: ActivatedRoute
        ) { }
 
   ngOnInit(): void {
+    this.systemSvc.checkLogin();
+
     // 1. get request for id passed in URL
     this.route.params.subscribe(parms => this.requestId = parms["id"]);
     this.requestSvc.get(this.requestId).subscribe(

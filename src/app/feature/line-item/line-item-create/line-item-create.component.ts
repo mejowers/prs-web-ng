@@ -6,6 +6,7 @@ import { Request } from 'src/app/model/request.class';
 import { LineItemService } from 'src/app/service/line-item.service';
 import { ProductService } from 'src/app/service/product.service';
 import { RequestService } from 'src/app/service/request.service';
+import { SystemService } from 'src/app/service/system.service';
 
 @Component({
   selector: 'app-line-item-create',
@@ -27,9 +28,11 @@ export class LineItemCreateComponent implements OnInit {
     private requestSvc: RequestService,
     private productSvc: ProductService,
     private router: Router,
+    private systemSvc: SystemService,
     private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.systemSvc.checkLogin();
     this.route.params.subscribe(parms => this.requestId = parms["id"]);
     console.log('line item create, id = '+this.requestId);
     this.requestSvc.get(this.requestId).subscribe(

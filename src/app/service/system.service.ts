@@ -16,6 +16,20 @@ export class SystemService {
     private router: Router
   ) { }
 
- 
+  isAdmin(): boolean {
+    return (this.loggedInUser.id == 0 ) ? false : this.loggedInUser.admin;
+  }
 
+  isReviewer(): boolean {
+    return (this.loggedInUser.id == 0) ? false : this.loggedInUser.reviewer;
+  }
+
+  checkLogin(): void {
+    if (this.loggedInUser.id == 0) {
+      console.log("User is not logged in... redirecting to login.");
+      this.router.navigateByUrl("/user-login");
+    }
+  }
 }
+
+

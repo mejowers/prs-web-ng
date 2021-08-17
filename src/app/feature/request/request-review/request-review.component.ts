@@ -20,6 +20,7 @@ export class RequestReviewComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.systemSvc.checkLogin();
     this.requestSvc.reviewList(this.systemSvc.loggedInUser.id).subscribe(
       resp => {
         this.requests = resp as Request[];

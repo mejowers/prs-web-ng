@@ -19,7 +19,7 @@ export class MenuComponent implements OnInit {
       new MenuItem("Product", "/product-list", "Prodcut List"),
       new MenuItem("Request", "/request-list", "Request List"),
       new MenuItem("Review", "/request-review", "Review Items" ),
-      new MenuItem("Login", "/user-login", "User Login")
+      new MenuItem("Logout", "/user-login", "User Login")
    
     ]
   }
