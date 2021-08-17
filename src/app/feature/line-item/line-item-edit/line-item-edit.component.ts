@@ -41,11 +41,9 @@ export class LineItemEditComponent implements OnInit {
     this.loggedInUser = this.systemSvc.loggedInUser;
     this.systemSvc.checkLogin();
     this.route.params.subscribe(parms => this.lineItemId = parms["id"]);
-    console.log('line item edit, id = ' + this.lineItemId);
     this.lineItemSvc.get(this.lineItemId).subscribe(
       resp => {
         this.lineItem = resp as LineItem;
-        console.log("Line Item edit, request for LI:", this.lineItem);
       },
       err => { console.log(err); }
     );

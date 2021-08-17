@@ -37,11 +37,9 @@ export class LineItemCreateComponent implements OnInit {
     this.loggedInUser = this.systemSvc.loggedInUser;
     this.systemSvc.checkLogin();
     this.route.params.subscribe(parms => this.requestId = parms["id"]);
-    console.log('line item create, id = '+this.requestId);
     this.requestSvc.get(this.requestId).subscribe(
       resp => { 
         this.lineItem.request = resp as Request;
-        console.log("Line Item Create, request for LI:",this.lineItem.request);
        },
       err => { console.log(err); }
     );
@@ -53,7 +51,7 @@ export class LineItemCreateComponent implements OnInit {
   }
 
   save() {
-    console.log("create line item:",this.lineItem);
+    this.loggedInUser = this.systemSvc.loggedInUser;
     this.lineItemSvc.create(this.lineItem).subscribe(
       resp => {
         this.lineItem = resp as LineItem;
