@@ -10,18 +10,10 @@
     <table class="table table-sm">
       <tr>
         <td>
-          Id:
-        </td>
-        <td>
-          <input [(ngModel)]="user.id" class="rounded" type="number">
-        </td>
-      </tr>
-      <tr>
-        <td>
           Username:
         </td>
         <td>
-          <input [(ngModel)]="user.username" class="rounded" type="text">
+          <input [(ngModel)]="user.username" class="rounded" type="text" disabled>
         </td>
       </tr>
       <tr>
@@ -30,7 +22,7 @@
           Password:
         </td>
         <td>
-          <input [(ngModel)]="user.password" class="rounded" type="password">
+          <input [(ngModel)]="user.password" class="rounded" type="password" disabled>
         </td>
       </tr>
       <tr>
@@ -38,7 +30,7 @@
           First Name:
         </td>
         <td>
-          <input [(ngModel)]="user.firstName" class="rounded" type="text">
+          <input [(ngModel)]="user.firstName" class="rounded" type="text" disabled>
         </td>
       </tr>
       <tr>
@@ -46,7 +38,7 @@
           Last Name:
         </td>
         <td>
-          <input [(ngModel)]="user.lastName" class="rounded" type="text">
+          <input [(ngModel)]="user.lastName" class="rounded" type="text" disabled>
         </td>
       </tr>
       <tr>
@@ -54,7 +46,7 @@
           Phone Number:
         </td>
         <td>
-          <input [(ngModel)]="user.phone" class="rounded" type="text">
+          <input [(ngModel)]="user.phone" class="rounded" type="text" disabled>
         </td>
       </tr>
       <tr>
@@ -62,7 +54,7 @@
           Email:
         </td>
         <td>
-          <input [(ngModel)]="user.email" class="rounded" type="text">
+          <input [(ngModel)]="user.email" class="rounded" type="text" disabled>
         </td>
       </tr>
       <tr>
@@ -70,7 +62,7 @@
           Reviewer:
         </td>
         <td>
-          <input [(ngModel)]="user.reviewer" class="rounded" type="checkbox">
+          <input [(ngModel)]="user.reviewer" class="rounded" type="checkbox" disabled>
         </td>
       </tr>
       <tr>
@@ -78,7 +70,7 @@
           Admin:
         </td>
         <td>
-          <input [(ngModel)]="user.admin" class="rounded" type="checkbox">
+          <input [(ngModel)]="user.admin" class="rounded" type="checkbox" disabled>
         </td>
       </tr>
     </table>
