@@ -1,5 +1,7 @@
 <app-menu></app-menu>
-<span class='component-title'>[{{title}}]</span>
+<span style="font-weight: bold; font-style: italic">{{title}} </span>
+<span style="float: right; padding-right: 30px; font-style:italic; font-weight: bold">Hello,
+  {{loggedInUser.firstName}}</span>
 <p *ngIf='!product'>Loading...</p>
 <div *ngIf='product'>
   <main class="single">

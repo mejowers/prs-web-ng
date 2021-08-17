@@ -1,10 +1,12 @@
 <app-menu></app-menu>
 <section class="heading">
-    <span class="page-title font-weight-bold font-italic">{{title}}</span> |
+    <span style="font-weight: bold; font-style: italic">{{title}} </span> |
     <a routerLink='/request-create'>
         <img width='20' height='20' src='assets/add-icon.png' title='Add New'>
     </a>
-    </section>
+    <span style="float: right; padding-right: 30px; font-style:italic; font-weight: bold">Hello,
+        {{loggedInUser.firstName}}</span>
+</section>
 <table class="table table-bordered table-striped">
     <thead>
         <tr>
@@ -24,11 +26,11 @@
     </tbody>
 </table>
 <section class="heading">
-    <span class="page-title font-weight-bold font-italic">[{{title2}}]</span> |
+    <span style="font-weight: bold; font-style: italic">{{title2}} </span> |
     <a routerLink='/line-item-create/{{request.id}}'>
         <img width='20' height='20' src='assets/add-icon.png' title='Add New'>
     </a>
-    </section>
+</section>
 <table class="table table-bordered table-striped">
     <thead>
         <tr>
@@ -47,16 +49,15 @@
             <td>{{ lineItem.quantity }}</td>
             <td>{{ lineItem.product.price }}</td>
             <td>{{ lineItem.quantity*lineItem.product.price }}</td>
-            <td> 
+            <td>
                 <a routerLink='/line-item-edit/{{lineItem.id}}'>
-                <img width='20' height='20' src='assets/pencil-icon.png' title='Edit Line Item'>
+                    <img width='20' height='20' src='assets/pencil-icon.png' title='Edit Line Item'>
                 </a> |
                 <span><button (click)="delete(lineItem.id)" style="border: none"> <a>
-                    <img width='20' height='20' src='assets/delete.jpg' title='Delete Line Item'>
-                    </a></button></span>
+                            <img width='20' height='20' src='assets/delete.jpg' title='Delete Line Item'>
+                        </a></button></span>
             </td>
         </tr>
     </tbody>
 </table>
 <span><button (click)="status()" class="btn btn-sm btn-primary">Submit</button></span>
-

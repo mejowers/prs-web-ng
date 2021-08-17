@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { User } from 'src/app/model/user.class';
 import { Vendor } from 'src/app/model/vendor.class';
 import { SystemService } from 'src/app/service/system.service';
 import { VendorService } from 'src/app/service/vendor.service';
@@ -14,6 +15,7 @@ export class VendorCreateComponent implements OnInit {
   title: string = "Vendor-Create";
   vendor: Vendor = new Vendor();
   submitBtnTitle: string = "Create";
+  loggedInUser: User = new User();
 
   constructor(
     private vendorSvc:VendorService,
@@ -22,6 +24,7 @@ export class VendorCreateComponent implements OnInit {
     ) { }
 
   ngOnInit(): void {
+    this.loggedInUser = this.systemSvc.loggedInUser;
     this.systemSvc.checkLogin();
   }
 

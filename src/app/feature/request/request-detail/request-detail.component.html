@@ -1,15 +1,16 @@
 <app-menu></app-menu>
-<span class='component-title'>[{{title}}]</span>
 <div *ngIf="request" class="component">
-    <section class="heading">
-        <span class="page-title font-weight-bold font-italic">{{title}}</span>
-        <span> | <a routerLink="/request-list">Return to List</a></span>
-    </section>
+  <section class="heading">
+    <span style="font-weight: bold; font-style: italic">{{title}} </span>
+    <span> | <a routerLink="/request-list">Return to List</a></span>
+    <span style="float: right; padding-right: 30px; font-style:italic; font-weight: bold">Hello,
+      {{loggedInUser.firstName}}</span>
+  </section>
   <main class="single">
     <table class="table table-sm">
       <tr>
         <td>
-          User: 
+          User:
         </td>
         <td>
           <input [(ngModel)]="request.user.firstName+' '+request.user.lastName" class="rounded" disabled>
@@ -40,25 +41,20 @@
         </td>
       </tr>
       <tr>
-            <td>
-              Delivery Mode: 
-            </td>
-            <td>
-              <select [(ngModel)]="request.deliveryMode" class="rounded" disabled>
-                <option>Pick Up</option>
-                <option>Delivery</option>
-              </select>
-            </td>
-          </tr>
+        <td>
+          Delivery Mode:
+        </td>
+        <td>
+          <select [(ngModel)]="request.deliveryMode" class="rounded" disabled>
+            <option>Pick Up</option>
+            <option>Delivery</option>
+          </select>
+        </td>
+      </tr>
     </table>
-<div>
-    <span>
+    <div>
+      <span>
         <span><a routerLink="/request-edit/{{request.id}}" class="btn btn-sm btn-warning">Edit</a></span>
         <span> | <button (click)="delete()" class="btn btn-sm btn-danger">Delete</button></span>
-    </span>
-</div>
-
-
-
-
-
+      </span>
+    </div>

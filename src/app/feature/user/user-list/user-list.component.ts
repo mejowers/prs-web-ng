@@ -11,6 +11,7 @@ import { UserService } from 'src/app/service/user.service';
 export class UserListComponent implements OnInit {
   title: string = "User List";
   users: User[] = [];
+  loggedInUser: User = new User();
 
   constructor(
     private userSvc: UserService,
@@ -18,6 +19,7 @@ export class UserListComponent implements OnInit {
     ) { }
 
   ngOnInit(): void {
+    this.loggedInUser = this.systemSvc.loggedInUser;
     this.systemSvc.checkLogin();
     console.log("User List, checking loggedInUser in systemSvc:", this.systemSvc.loggedInUser);
     this.userSvc.list().subscribe(

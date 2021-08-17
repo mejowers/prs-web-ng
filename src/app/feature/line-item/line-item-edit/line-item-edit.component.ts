@@ -3,6 +3,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { LineItem } from 'src/app/model/line-item.class';
 import { Product } from 'src/app/model/product.class';
 import { Request } from 'src/app/model/request.class';
+import { User } from 'src/app/model/user.class';
 import { Vendor } from 'src/app/model/vendor.class';
 import { LineItemService } from 'src/app/service/line-item.service';
 import { ProductService } from 'src/app/service/product.service';
@@ -25,8 +26,8 @@ export class LineItemEditComponent implements OnInit {
   products: Product[] = [];
   requestId: number = 0;
   lineItemId: number = 0;
-
-
+  loggedInUser: User = new User();
+  
   constructor(
     private lineItemSvc: LineItemService,
     private requestSvc: RequestService,
@@ -37,6 +38,7 @@ export class LineItemEditComponent implements OnInit {
     private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.loggedInUser = this.systemSvc.loggedInUser;
     this.systemSvc.checkLogin();
     this.route.params.subscribe(parms => this.lineItemId = parms["id"]);
     console.log('line item edit, id = ' + this.lineItemId);

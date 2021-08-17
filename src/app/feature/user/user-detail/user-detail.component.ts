@@ -13,6 +13,7 @@ export class UserDetailComponent implements OnInit {
   title: string = "User-Detail";
   user: User = new User();
   userId: number = 0;
+  loggedInUser: User = new User();
 
   constructor(
     private systemSvc: SystemService,
@@ -22,6 +23,7 @@ export class UserDetailComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.loggedInUser = this.systemSvc.loggedInUser;
     this.systemSvc.checkLogin();
     this.route.params.subscribe(parms => this.userId = parms["id"]);
     this.userSvc.get(this.userId).subscribe(

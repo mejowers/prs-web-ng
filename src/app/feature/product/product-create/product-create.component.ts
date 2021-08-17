@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Product } from 'src/app/model/product.class';
+import { User } from 'src/app/model/user.class';
 import { Vendor } from 'src/app/model/vendor.class';
 import { ProductService } from 'src/app/service/product.service';
 import { SystemService } from 'src/app/service/system.service';
@@ -16,6 +17,8 @@ export class ProductCreateComponent implements OnInit {
   title: string = "Product-Create";
   product: Product = new Product();
   vendors: Vendor[] = [];
+  loggedInUser: User = new User();
+
 
   constructor(
     private productSvc:ProductService,
@@ -25,6 +28,7 @@ export class ProductCreateComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.loggedInUser = this.systemSvc.loggedInUser;
     this.systemSvc.checkLogin();
     //populate list of vendors
     this.vendorSvc.list().subscribe(

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Product } from 'src/app/model/product.class';
+import { User } from 'src/app/model/user.class';
 import { Vendor } from 'src/app/model/vendor.class';
 import { ProductService } from 'src/app/service/product.service';
 import { SystemService } from 'src/app/service/system.service';
@@ -18,6 +19,7 @@ export class ProductEditComponent implements OnInit {
   vendors: Vendor[] = [];
   submitBtnTitle: string = "Edit";
   productId: number = 0;
+  loggedInUser: User = new User();
 
   constructor(  
     private productSvc: ProductService,
@@ -27,6 +29,7 @@ export class ProductEditComponent implements OnInit {
     private route: ActivatedRoute) { }
 
   ngOnInit(): void { 
+  this.loggedInUser = this.systemSvc.loggedInUser;
   this.systemSvc.checkLogin();
   this.route.params.subscribe(parms => this.productId = parms["id"]);
   this.productSvc.get(this.productId).subscribe(

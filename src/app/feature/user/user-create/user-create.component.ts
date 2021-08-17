@@ -14,6 +14,7 @@ export class UserCreateComponent implements OnInit {
   title: string = "User-Create";
   user: User = new User();
   submitBtnTitle: string = "Create";
+  loggedInUser: User = new User();
 
   constructor(
     private userSvc:UserService,
@@ -22,6 +23,7 @@ export class UserCreateComponent implements OnInit {
     ) { }
 
   ngOnInit(): void {
+    this.loggedInUser = this.systemSvc.loggedInUser;
     this.systemSvc.checkLogin();
   }
 

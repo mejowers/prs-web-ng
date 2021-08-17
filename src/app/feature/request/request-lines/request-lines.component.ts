@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { LineItem } from 'src/app/model/line-item.class';
 import { Request } from 'src/app/model/request.class';
+import { User } from 'src/app/model/user.class';
 import { LineItemService } from 'src/app/service/line-item.service';
 import { RequestService } from 'src/app/service/request.service';
 import { SystemService } from 'src/app/service/system.service';
@@ -20,6 +21,7 @@ export class RequestLinesComponent implements OnInit {
   lineItem: LineItem = new LineItem();
   title2: string = "Line Items";
   submitBtnTitle: string = "Submit";
+  loggedInUser: User = new User();
   
 
   constructor(
@@ -31,6 +33,7 @@ export class RequestLinesComponent implements OnInit {
        ) { }
 
   ngOnInit(): void {
+    this.loggedInUser = this.systemSvc.loggedInUser;
     this.systemSvc.checkLogin();
 
     // 1. get request for id passed in URL

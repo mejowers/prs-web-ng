@@ -1,5 +1,9 @@
 <app-menu></app-menu>
-<span class='component-title'>[{{title}}]</span>
+<section>
+  <span style="font-weight: bold; font-style: italic">{{title}} </span>
+  <span style="float: right; padding-right: 30px; font-style:italic; font-weight: bold">Hello,
+    {{loggedInUser.firstName}}</span>
+</section>
 <p *ngIf='!vendor'>Loading...</p>
 <div *ngIf='vendor'>
   <main class="single">
@@ -81,5 +85,3 @@
   </main>
   <span><button (click)="save()" class="btn btn-sm btn-primary">{{submitBtnTitle}}</button></span>
 </div>
-
-

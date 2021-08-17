@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
+import { User } from 'src/app/model/user.class';
 import { Vendor } from 'src/app/model/vendor.class';
 import { SystemService } from 'src/app/service/system.service';
 import { VendorService } from 'src/app/service/vendor.service';
@@ -15,6 +16,7 @@ export class VendorEditComponent implements OnInit {
   vendor: Vendor = new Vendor();
   submitBtnTitle: string = "Edit";
   vendorId: number = 0;
+  loggedInUser: User = new User();
 
   constructor(
     private vendorSvc: VendorService,
@@ -24,6 +26,7 @@ export class VendorEditComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.loggedInUser = this.systemSvc.loggedInUser;
     this.systemSvc.checkLogin();
     this.route.params.subscribe(parms => this.vendorId = parms["id"]);
     this.vendorSvc.get(this.vendorId).subscribe(

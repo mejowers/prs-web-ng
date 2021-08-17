@@ -1,7 +1,9 @@
 <app-menu></app-menu>
 <section class="heading">
-    <span class="page-title font-weight-bold font-italic">{{title}}</span>
-    </section>
+    <span style="font-weight: bold; font-style: italic">{{title}} </span>
+    <span style="float: right; padding-right: 30px; font-style:italic; font-weight: bold">Hello,
+        {{loggedInUser.firstName}}</span>
+</section>
 <table class="table table-bordered table-striped">
     <thead class="table-dark">
         <tr>
@@ -20,7 +22,7 @@
             <td>{{ request.status }}</td>
             <td>{{ request.total }}</td>
             <td>{{ request.submittedDate }}</td>
-            <td> 
+            <td>
                 <a routerLink='/request-approve/{{request.id}}'>
                     <img width='20' height='20' src='assets/review.png' title='Request Review'>
                 </a>
@@ -28,7 +30,3 @@
         </tr>
     </tbody>
 </table>
-
-
-
-

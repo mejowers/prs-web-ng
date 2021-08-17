@@ -15,6 +15,7 @@ export class UserEditComponent implements OnInit {
   user: User = new User();
   submitBtnTitle: string = "Edit";
   userId: number = 0;
+  loggedInUser: User = new User();
 
   constructor(  
     private userSvc: UserService,
@@ -22,7 +23,8 @@ export class UserEditComponent implements OnInit {
     private route: ActivatedRoute,
     private systemSvc: SystemService) { }
 
-  ngOnInit(): void {  
+  ngOnInit(): void { 
+    this.loggedInUser = this.systemSvc.loggedInUser; 
     this.systemSvc.checkLogin();
     this.route.params.subscribe(parms => this.userId = parms["id"]);
     this.userSvc.get(this.userId).subscribe(

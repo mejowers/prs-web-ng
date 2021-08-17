@@ -1,10 +1,12 @@
 <app-menu></app-menu>
 <section class="heading">
-    <span class="page-title font-weight-bold font-italic">{{title}}</span>
+    <span style="font-weight: bold; font-style: italic">{{title}} </span>
     <a routerLink='/vendor-create'>
         <img width='20' height='20' src='assets/add-icon.png' title='Add New'>
     </a>
-    </section>
+    <span style="float: right; padding-right: 30px; font-style:italic; font-weight: bold">Hello,
+        {{loggedInUser.firstName}}</span>
+</section>
 <table class="table table-bordered table-striped">
     <thead class="table-dark">
         <tr>
@@ -32,13 +34,12 @@
             <td>{{ vendor.phone }}</td>
             <td>{{ vendor.email }}</td>
             <td> <a routerLink='/vendor-detail/{{vendor.id}}'>
-                <img width='20' height='20' src='assets/details.png' title='Vendor Details'>
-            </a> |
-            <a routerLink='/vendor-edit/{{vendor.id}}'>
-                <img width='20' height='20' src='assets/pencil-icon.png' title='Edit Vendor'>
-            </a>
-        </td>
+                    <img width='20' height='20' src='assets/details.png' title='Vendor Details'>
+                </a> |
+                <a routerLink='/vendor-edit/{{vendor.id}}'>
+                    <img width='20' height='20' src='assets/pencil-icon.png' title='Edit Vendor'>
+                </a>
+            </td>
         </tr>
     </tbody>
 </table>
-

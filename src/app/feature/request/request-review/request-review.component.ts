@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Request } from 'src/app/model/request.class'
+import { User } from 'src/app/model/user.class';
 import { RequestService } from 'src/app/service/request.service';
 import { SystemService } from 'src/app/service/system.service';
 
@@ -13,6 +14,7 @@ export class RequestReviewComponent implements OnInit {
   requests: Request[] = [];
   title: string = "Request-Review";
   userId: number = 0;
+  loggedInUser: User = new User();
 
   constructor(
     private requestSvc: RequestService,
@@ -20,6 +22,7 @@ export class RequestReviewComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.loggedInUser = this.systemSvc.loggedInUser;
     this.systemSvc.checkLogin();
     this.requestSvc.reviewList(this.systemSvc.loggedInUser.id).subscribe(
       resp => {
