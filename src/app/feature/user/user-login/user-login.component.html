@@ -1,30 +1,31 @@
-
-<div class="welcome">
-    <h1>{{title}}</h1>
-  </div>
-  <div class="component-content">
-    <form class="text-center" style="justify-content: center;">
-      <table *ngIf='user' class="table-sm">
-        <!-- <tr class="text-center">
+<div class="welcome" style="text-align: center; margin-top: 50px;">
+  <a>
+    <img width='200' height='200' src='assets/prs.png' title='PRS Logo'>
+  </a>
+  <h1>{{title}}</h1>
+</div>
+<div>
+  <form>
+    <table *ngIf='user' class="table-sm">
+      <!-- <tr class="text-center">
           <td colspan="2">Login</td>
         </tr> -->
-        <tr>
-          <td>Username:</td>
-          <td><input [(ngModel)]='user.username' name='Username' type='text'></td>
-        </tr>
-        <tr>
-          <td>Password:</td>
-          <td><input [(ngModel)]='user.password' name='Password' type='password'></td>
-        </tr>
-        <tr>
-          <td class="text-center" colspan="2">
-            <button type='submit' (click)="login()" class="btn btn-primary">Login</button>
-          </td>
-        </tr>
-        <tr>
-          <td colspan="2"><label class="text-sm-left text-danger">{{msg}}</label></td>
-        </tr>
-      </table>
-    </form>
-  </div>
-
+      <tr>
+        <td>Username:</td>
+        <td><input [(ngModel)]='user.username' name='Username' type='text'></td>
+      </tr>
+      <tr>
+        <td>Password:</td>
+        <td><input [(ngModel)]='user.password' name='Password' type='password'></td>
+      </tr>
+      <tr>
+        <td class="text-center" colspan="2">
+          <button type='submit' (click)="login()" class="btn btn-primary">Login</button>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2"><label class="text-sm-left text-danger">{{msg}}</label></td>
+      </tr>
+    </table>
+  </form>
+</div>
