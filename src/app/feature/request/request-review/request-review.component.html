@@ -20,7 +20,7 @@
             <td>{{ request.user.lastName+', '+request.user.firstName }}</td>
             <td>{{ request.description }}</td>
             <td>{{ request.status }}</td>
-            <td>{{ request.total }}</td>
+            <td>{{ request.total | currency }}</td>
             <td>{{ request.submittedDate }}</td>
             <td>
                 <a routerLink='/request-approve/{{request.id}}'>
