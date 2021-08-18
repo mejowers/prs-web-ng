@@ -1,14 +1,14 @@
 <app-menu></app-menu>
 <section class="heading">
-    <span style="font-weight: bold; font-style: italic">{{title}} </span> |
+    <span style="font-weight: bold; padding-left: 15px; font-style: italic">{{title}} </span> |
     <a routerLink='/request-create'>
         <img width='20' height='20' src='assets/add-icon.png' title='Add New'>
     </a>
-    <span style="float: right; padding-right: 30px; font-style:italic; font-weight: bold">Hello,
+    <span style="float: right; padding-right: 15px; font-style:italic; font-weight: bold">Hello,
         {{loggedInUser.firstName}}</span>
 </section>
 <table class="table table-bordered table-striped">
-    <thead>
+    <thead  class="table-dark">
         <tr>
             <th>Name</th>
             <th>Description</th>
@@ -26,13 +26,13 @@
     </tbody>
 </table>
 <section class="heading">
-    <span style="font-weight: bold; font-style: italic">{{title2}} </span> |
+    <span style="font-weight: bold; padding-left: 15px; font-style: italic">{{title2}} </span> |
     <a routerLink='/line-item-create/{{request.id}}'>
         <img width='20' height='20' src='assets/add-icon.png' title='Add New'>
     </a>
 </section>
 <table class="table table-bordered table-striped">
-    <thead>
+    <thead class="table-dark">
         <tr>
             <th>Vendor</th>
             <th>Product</th>
@@ -60,4 +60,4 @@
         </tr>
     </tbody>
 </table>
-<span><button (click)="status()" class="btn btn-sm btn-primary">Submit</button></span>
+<span style="padding-left: 15px;"><button (click)="status()" class="btn btn-sm btn-primary">Submit</button></span>

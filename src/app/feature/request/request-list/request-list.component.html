@@ -1,10 +1,10 @@
 <app-menu></app-menu>
-<section class="heading">
-    <span style="font-weight: bold; font-style: italic">{{title}} </span> |
+<section class="Heading">
+    <span style="font-weight: bold; padding-left: 15px; font-style: italic">{{title}} </span> 
     <a routerLink='/request-create'>
         <img width='20' height='20' src='assets/add-icon.png' title='Add New'>
     </a>
-    <span style="float: right; padding-right: 30px; font-style:italic; font-weight: bold">Hello,
+    <span style="float: right; padding-right: 15px; font-style:italic; font-weight: bold">Hello,
         {{loggedInUser.firstName}}</span>
 </section>
 <table class="table table-bordered table-striped">
@@ -12,7 +12,6 @@
         <tr>
             <th>User</th>
             <th>Description</th>
-            <th>Justification</th>
             <th>Date Needed</th>
             <th>Delivery Mode</th>
             <th>Status</th>
@@ -25,7 +24,6 @@
         <tr *ngFor='let request of requests'>
             <td>{{ request.user.lastName+', '+request.user.firstName }}</td>
             <td>{{ request.description }}</td>
-            <td>{{ request.justification }}</td>
             <td>{{ request.dateNeeded}}</td>
             <td>{{ request.deliveryMode }}</td>
             <td>{{ request.status }}</td>

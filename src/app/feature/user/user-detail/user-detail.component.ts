@@ -10,7 +10,7 @@ import { UserService } from 'src/app/service/user.service';
   styleUrls: ['./user-detail.component.css']
 })
 export class UserDetailComponent implements OnInit {
-  title: string = "User-Detail";
+  title: string = "User Detail";
   user: User = new User();
   userId: number = 0;
   loggedInUser: User = new User();

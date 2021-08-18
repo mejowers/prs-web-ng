@@ -14,7 +14,7 @@ import { VendorService } from 'src/app/service/vendor.service';
 })
 export class ProductEditComponent implements OnInit {
 
-  title: string = "Product-Edit";
+  title: string = "Product Edit";
   product: Product = new Product();
   vendors: Vendor[] = [];
   submitBtnTitle: string = "Edit";

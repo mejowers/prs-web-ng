@@ -1,9 +1,9 @@
 <app-menu></app-menu>
 <div *ngIf="user" class="component">
   <section class="heading">
-    <span style="font-weight: bold; font-style: italic">{{title}} </span>
+    <span style="font-weight: bold; padding-left: 15px; font-style: italic">{{title}} </span>
     <span> | <a routerLink="/user-list">Return to List</a></span>
-    <span style="float: right; padding-right: 30px; font-style:italic; font-weight: bold">Hello,
+    <span style="float: right; padding-right: 15px; font-style:italic; font-weight: bold">Hello,
       {{loggedInUser.firstName}}</span>
   </section>
   <main class="single">
@@ -76,7 +76,7 @@
     </table>
   </main>
   <span>
-    <span><a routerLink="/user-edit/{{user.id}}" class="btn btn-sm btn-warning">Edit</a></span>
+    <span style="padding-left: 15px;"><a routerLink="/user-edit/{{user.id}}" class="btn btn-sm btn-warning">Edit</a></span>
     <span> | <button (click)="delete()" class="btn btn-sm btn-danger">Delete</button></span>
   </span>
 </div>

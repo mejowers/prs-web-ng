@@ -12,7 +12,7 @@ import { SystemService } from 'src/app/service/system.service';
 })
 export class RequestEditComponent implements OnInit {
  
-  title: string = "Request-Edit";
+  title: string = "Request Edit";
   request: Request = new Request();
   submitBtnTitle: string = "Edit";
   requestId: number = 0;

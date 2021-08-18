@@ -1,7 +1,7 @@
 <app-menu></app-menu>
 <section>
-  <span style="font-weight: bold; font-style: italic">{{title}} </span>
-  <span style="float: right; padding-right: 30px; font-style:italic; font-weight: bold">Hello,
+  <span style="font-weight: bold; padding-left: 15px; font-style: italic">{{title}} </span>
+  <span style="float: right; padding-right: 15px; font-style:italic; font-weight: bold">Hello,
     {{loggedInUser.firstName}}</span>
 </section>
 <p *ngIf='!vendor'>Loading...</p>
@@ -75,5 +75,5 @@
       </tr>
     </table>
   </main>
-  <span><button (click)="save()" class="btn btn-sm btn-primary">{{submitBtnTitle}}</button></span>
+  <span style="padding-left: 15px;"><button (click)="save()" class="btn btn-sm btn-primary">{{submitBtnTitle}}</button></span>
 </div>

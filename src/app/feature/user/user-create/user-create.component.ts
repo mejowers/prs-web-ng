@@ -11,7 +11,7 @@ import { UserService } from 'src/app/service/user.service';
 })
 export class UserCreateComponent implements OnInit {
 
-  title: string = "User-Create";
+  title: string = "User Create";
   user: User = new User();
   submitBtnTitle: string = "Create";
   loggedInUser: User = new User();

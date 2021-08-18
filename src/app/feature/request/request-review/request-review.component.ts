@@ -12,7 +12,7 @@ import { SystemService } from 'src/app/service/system.service';
 export class RequestReviewComponent implements OnInit {
 
   requests: Request[] = [];
-  title: string = "Request-Review";
+  title: string = "Request Review";
   userId: number = 0;
   loggedInUser: User = new User();
 

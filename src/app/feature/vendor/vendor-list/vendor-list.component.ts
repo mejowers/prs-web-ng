@@ -12,7 +12,7 @@ import { VendorService } from 'src/app/service/vendor.service';
 })
 export class VendorListComponent implements OnInit {
 
-  title: string = "Vendor-List";
+  title: string = "Vendor List";
   vendors: Vendor[] = [];
   loggedInUser: User = new User();
 

@@ -14,7 +14,7 @@ import { SystemService } from 'src/app/service/system.service';
 })
 export class ProductDetailComponent implements OnInit {
 
-  title: string = "Product-Detail";
+  title: string = "Product Detail";
   product: Product = new Product();
   vendor: Vendor[] = [];
   productId: number = 0;

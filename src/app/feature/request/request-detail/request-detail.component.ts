@@ -12,7 +12,7 @@ import { SystemService } from 'src/app/service/system.service';
 })
 export class RequestDetailComponent implements OnInit {
 
-  title: string = "Request-Detail";
+  title: string = "Request Detail";
   request: Request = new Request();
   requestId: number = 0;
   loggedInUser: User = new User();

@@ -3,11 +3,11 @@
     <h1>{{title}}</h1>
   </div>
   <div class="component-content">
-    <form class="text-center">
+    <form class="text-center" style="justify-content: center;">
       <table *ngIf='user' class="table-sm">
-        <tr class="text-center">
+        <!-- <tr class="text-center">
           <td colspan="2">Login</td>
-        </tr>
+        </tr> -->
         <tr>
           <td>Username:</td>
           <td><input [(ngModel)]='user.username' name='Username' type='text'></td>

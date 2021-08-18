@@ -13,7 +13,7 @@ import { SystemService } from 'src/app/service/system.service';
 })
 export class RequestCreateComponent implements OnInit {
 
-  title: string = "Request-Create";
+  title: string = "Request Create";
   request: Request = new Request();
   loggedInUser: User = new User();
   

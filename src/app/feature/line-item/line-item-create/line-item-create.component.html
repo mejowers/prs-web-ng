@@ -1,6 +1,6 @@
 <app-menu></app-menu>
-<span style="font-weight: bold; font-style: italic">{{title}} (PR ID: {{requestId}})</span>
-<span style="float: right; padding-right: 30px; font-style:italic; font-weight: bold">Hello,
+<span style="font-weight: bold; padding-left: 15px; font-style: italic">{{title}} (PR ID: {{requestId}})</span>
+<span style="float: right; padding-right: 15px; font-style:italic; font-weight: bold">Hello,
   {{loggedInUser.firstName}}</span>
 <p *ngIf='!lineItem'>Loading...</p>
 <div *ngIf='lineItem'>
@@ -28,5 +28,7 @@
       </tr>
     </table>
   </main>
-  <span><button (click)="save()" class="btn btn-sm btn-primary">Create</button></span>
+  <div style="padding-left: 15px;">
+  <span><button (click)="save()" class="btn btn-sm btn-primary" >Create</button></span>
+</div>
 </div>

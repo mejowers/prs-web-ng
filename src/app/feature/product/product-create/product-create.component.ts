@@ -14,7 +14,7 @@ import { VendorService } from 'src/app/service/vendor.service';
 })
 export class ProductCreateComponent implements OnInit {
 
-  title: string = "Product-Create";
+  title: string = "Product Create";
   product: Product = new Product();
   vendors: Vendor[] = [];
   loggedInUser: User = new User();
