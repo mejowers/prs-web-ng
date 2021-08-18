@@ -24,7 +24,7 @@ import { VendorEditComponent } from './feature/vendor/vendor-edit/vendor-edit.co
 import { VendorListComponent } from './feature/vendor/vendor-list/vendor-list.component';
 
 const routes: Routes = [
-  { path:'', redirectTo: '/user-list', pathMatch:'full'},
+  { path:'', redirectTo: '/request-list', pathMatch:'full'},
   { path:'user-login', component:UserLoginComponent},
   { path:'user-list', component:UserListComponent},
   { path:'user-create', component:UserCreateComponent},

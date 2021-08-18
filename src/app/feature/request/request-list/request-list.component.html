@@ -8,12 +8,11 @@
         {{loggedInUser.firstName}}</span>
 </section>
 <table class="table table-bordered table-striped">
-    <thead class="table-dark">
+    <thead style="background-color: rgb(96, 176, 230);">
         <tr>
             <th>User</th>
             <th>Description</th>
             <th>Date Needed</th>
-            <th>Delivery Mode</th>
             <th>Status</th>
             <th>Total</th>
             <th>Submitted Date</th>
@@ -25,7 +24,6 @@
             <td>{{ request.user.lastName+', '+request.user.firstName }}</td>
             <td>{{ request.description }}</td>
             <td>{{ request.dateNeeded}}</td>
-            <td>{{ request.deliveryMode }}</td>
             <td>{{ request.status }}</td>
             <td>{{ request.total | currency }}</td>
             <td>{{ request.submittedDate }}</td>
