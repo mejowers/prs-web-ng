@@ -62,7 +62,6 @@ export class LineItemEditComponent implements OnInit {
   }
 
   save() {
-    console.log("edit line item:", this.lineItem);
     this.lineItemSvc.edit(this.lineItem).subscribe(
       resp => {
         this.lineItem = resp as LineItem;

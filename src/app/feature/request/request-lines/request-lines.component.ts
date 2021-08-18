@@ -52,7 +52,6 @@ export class RequestLinesComponent implements OnInit {
 
   }
   status() {
-    console.log("Review request lines:", this.request);
     this.requestSvc.submit(this.request).subscribe(
       resp => {
         this.request = resp as Request;
@@ -63,7 +62,6 @@ export class RequestLinesComponent implements OnInit {
   }
   
   save() {
-    console.log("Save request lines:",this.request);
     this.requestSvc.create(this.request).subscribe(
       resp => {
         this.request = resp as Request;
@@ -74,7 +72,6 @@ export class RequestLinesComponent implements OnInit {
   }
 
   delete(lineItemId: number) {
-    console.log("delete line item:", lineItemId);
     this.lineItemSvc.delete(lineItemId).subscribe(
       resp => {
         this.lineItem = resp as LineItem;

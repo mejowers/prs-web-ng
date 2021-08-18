@@ -28,7 +28,6 @@ export class VendorListComponent implements OnInit {
     this.vendorSvc.list().subscribe(
       resp => {
         this.vendors = resp as Vendor[];
-        console.log("list of vendors:", this.vendors);
       },
       err => {console.log(err)}
     );

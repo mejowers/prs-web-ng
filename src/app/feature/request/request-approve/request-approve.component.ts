@@ -14,7 +14,7 @@ import { User } from 'src/app/model/user.class';
 })
 export class RequestApproveComponent implements OnInit {
 
-  title: string = "Purchase Request Approve/Reject";
+  title: string = "Purchase Request Approve / Reject";
   title2: string = "Line Items";
   request: Request = new Request();
   lineItems: LineItem[] = [];
