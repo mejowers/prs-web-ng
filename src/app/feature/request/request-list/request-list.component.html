@@ -10,17 +10,17 @@
 <table class="table table-bordered table-striped">
     <thead style="background-color: rgb(96, 176, 230);">
         <tr>
-            <th>User</th>
+            <th><a (click)="sortBy('user')">User</a></th>
             <th>Description</th>
-            <th>Date Needed</th>
+            <th><a (click)="sortBy('dateNeeded')">Date Needed</a></th>
             <th>Status</th>
-            <th>Total</th>
-            <th>Submitted Date</th>
+            <th><a (click)="sortBy('total')">Total</a></th>
+            <th><a (click)="sortBy('submittedDate')">Submitted Date</a></th>
             <th>Action</th>
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor='let request of requests'>
+        <tr *ngFor='let request of requests | sort:sortCriteria:sortOrder'>
             <td>{{ request.user.lastName+', '+request.user.firstName }}</td>
             <td>{{ request.description }}</td>
             <td>{{ request.dateNeeded}}</td>

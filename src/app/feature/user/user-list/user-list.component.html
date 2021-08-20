@@ -10,9 +10,9 @@
 <table class="table table-bordered table-striped">
     <thead style="background-color: rgb(96, 176, 230);">
         <tr>
-            <th>Username</th>
-            <th>First Name</th>
-            <th>Last Name</th>
+            <th><a (click)="sortBy('username')">Username</a></th>
+            <th><a (click)="sortBy('firstName')">First Name</a></th>
+            <th><a (click)="sortBy('lastName')">Last Name</a></th>
             <th>Phone</th>
             <th>Email</th>
             <th>Reviewer</th>
@@ -21,7 +21,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor='let user of users'>
+        <tr *ngFor='let user of users | sort:sortCriteria:sortOrder'>
             <td>{{ user.username }}</td>
             <td>{{ user.firstName }}</td>
             <td>{{ user.lastName }}</td>

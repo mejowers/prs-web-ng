@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { LoginView } from 'src/app/model/login-view.class';
 import { User } from 'src/app/model/user.class';
 import { SystemService } from 'src/app/service/system.service';
 import { UserService } from 'src/app/service/user.service';
@@ -14,6 +15,7 @@ export class UserLoginComponent implements OnInit {
   title: string = "Login";
   msg: string = '';
   user: User = new User();
+  loginView: LoginView = new LoginView();
 
   constructor(
     private userSvc: UserService,
@@ -22,18 +24,13 @@ export class UserLoginComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.user.username = "mjowers";
-    this.user.password = "password";
-    this.user.id = 0;
-    this.user.email = null;
-    this.user.phone = null;
-    this.user.firstName = null;
-    this.user.lastName = null;
+    this.loginView.username = "mjowers";
+    this.loginView.password = "password";
   }
 
   login() {
     //call login service using username and password
-    this.userSvc.login(this.user).subscribe(
+    this.userSvc.login(this.loginView).subscribe(
       resp => {
         if (resp == null) {
           this.msg = "Invalid username / password combo.";
