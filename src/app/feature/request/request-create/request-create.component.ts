@@ -35,11 +35,10 @@ export class RequestCreateComponent implements OnInit {
     this.requestSvc.create(this.request).subscribe(
       resp => {
         this.request = resp as Request;
-        this.router.navigateByUrl("/request-list");
-      },
+        this.router.navigateByUrl("/request-list");},
       err => {console.log(err)}
     );
-      }
+  }
 }
 
 
