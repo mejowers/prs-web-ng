@@ -1,5 +1,4 @@
 import { HttpClient } from '@angular/common/http';
-import { R3QueryMetadata } from '@angular/compiler';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Request } from '../model/request.class';
