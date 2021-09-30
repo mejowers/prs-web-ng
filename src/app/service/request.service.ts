@@ -29,7 +29,7 @@ export class RequestService {
   }
 
   edit(request: Request): Observable<Request> {
-    return this.http.put(URL + "/", request) as Observable<Request>;
+   return this.http.put(URL + "/", request) as Observable<Request>;
   }
 
   delete(id: number): Observable<Request> {
