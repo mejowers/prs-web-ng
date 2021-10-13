@@ -25,8 +25,8 @@ export class LineItemService {
     return this.http.post(URL + "/", lineItem) as Observable<LineItem>;
   }
 
-  edit(lineItem: LineItem): Observable<LineItem> {
-    return this.http.put(URL + "/", lineItem) as Observable<LineItem>;
+  edit(lineItem: LineItem): Observable<any> {
+    return this.http.put(URL + "/" , lineItem) as Observable<any>;   
   }
 
   delete(id: number): Observable<LineItem> {

@@ -62,10 +62,14 @@ export class LineItemEditComponent implements OnInit {
   }
 
   save() {
+    //console.log(this.lineItem);
     this.lineItemSvc.edit(this.lineItem).subscribe(
       resp => {
-        this.lineItem = resp as LineItem;
-        this.router.navigateByUrl('/request-lines/' + this.lineItem.request.id);
+        let requestId = this.lineItem.request == null? this.lineItem.requestId : this.lineItem.request.id; 
+        // this allows the front end to talk to both c# (which does not need the instance passed through the ed) and Java(which does 
+        //need the instance passed through the edit) to work from the same front end.
+      this.lineItem = resp as LineItem;
+      this.router.navigateByUrl('/request-lines/' + requestId); 
       },
       err => { console.log(err) }
     );

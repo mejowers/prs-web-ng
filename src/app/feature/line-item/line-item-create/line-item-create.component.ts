@@ -40,6 +40,8 @@ export class LineItemCreateComponent implements OnInit {
     this.requestSvc.get(this.requestId).subscribe(
       resp => { 
         this.lineItem.request = resp as Request;
+        this.lineItem.requestId = +this.requestId;
+       
        },
       err => { console.log(err); }
     );
@@ -52,10 +54,16 @@ export class LineItemCreateComponent implements OnInit {
 
   save() {
     this.loggedInUser = this.systemSvc.loggedInUser;
+    this.lineItem.productId = this.lineItem.product.id;
+    console.log(this.lineItem);
+
     this.lineItemSvc.create(this.lineItem).subscribe(
       resp => {
+        // let requestId = this.lineItem.request == null? this.lineItem.requestId : this.lineItem.request.id; 
+        // this allows the front end to talk to both c# (which does not need the instance passed through the ed) and Java(which does 
+        //need the instance passed through the edit) to work from the same front end.
         this.lineItem = resp as LineItem;
-        this.router.navigateByUrl('/request-lines/'+this.requestId);
+        this.router.navigateByUrl('/request-lines/'+ this.requestId);
       },
       err => { console.log(err) }
     );
