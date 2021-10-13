@@ -9,9 +9,10 @@ export class Product {
     price: number;
     unit: string;
     photoPath: string;
+    vendorId: number;
 
     constructor(id: number = 0, vendor: Vendor = new Vendor(), partNumber: string = '', 
-        name: string = '', price: number = 0, unit: string = '', photoPath: string ='') {
+        name: string = '', price: number = 0, unit: string = '', photoPath: string ='', vendorId: number = 0) {
 
             this.id = id;
             this.vendor = vendor;
@@ -20,5 +21,6 @@ export class Product {
             this.price = price;
             this.unit = unit;
             this.photoPath = photoPath;
+            this.vendorId = vendorId
         }
 }

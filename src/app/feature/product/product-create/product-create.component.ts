@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+
 import { Product } from 'src/app/model/product.class';
 import { User } from 'src/app/model/user.class';
 import { Vendor } from 'src/app/model/vendor.class';
@@ -30,15 +31,19 @@ export class ProductCreateComponent implements OnInit {
   ngOnInit(): void {
     this.loggedInUser = this.systemSvc.loggedInUser;
     this.systemSvc.checkLogin();
-    //populate list of vendors
+
+        //populate list of vendors
     this.vendorSvc.list().subscribe(
-      resp => { this.vendors = resp as Vendor[];},                
+      resp => { this.vendors = resp as Vendor[];
+      this.product.vendorId = +this.product.vendor.id;},                
                 err => {console.log(err);}
     );
   }
 
   save() {
-    this.productSvc.create(this.product).subscribe(
+     this.product.vendorId = this.product.vendor.id;
+     
+      this.productSvc.create(this.product).subscribe(
       resp => {
         this.product = resp as Product;
         this.router.navigateByUrl("/product-list");},

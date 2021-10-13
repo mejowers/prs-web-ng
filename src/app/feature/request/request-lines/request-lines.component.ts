@@ -54,8 +54,9 @@ export class RequestLinesComponent implements OnInit {
   status() {
     this.requestSvc.submit(this.request).subscribe(
       resp => {
+               
         this.request = resp as Request;
-        this.router.navigateByUrl('/request-list');
+        this.router.navigateByUrl("/request-list");
       },
       err => {console.log(err)}
     );
@@ -65,7 +66,7 @@ export class RequestLinesComponent implements OnInit {
     this.requestSvc.create(this.request).subscribe(
       resp => {
         this.request = resp as Request;
-        this.router.navigateByUrl('/request-list');
+        this.router.navigateByUrl("/request-list");
       },
       err => { console.log(err) }
     );
@@ -88,7 +89,7 @@ export class RequestLinesComponent implements OnInit {
           resp => { this.lineItems = resp as LineItem[];},
                 err=> {console.log(err);}
         );
-        this.router.navigateByUrl('/request-lines/' + this.lineItem.request.id);
+        this.router.navigateByUrl("/request-lines/" + this.lineItem.request.id);
       },
       err => { console.log(err) }
     );

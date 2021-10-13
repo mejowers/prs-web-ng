@@ -26,12 +26,13 @@ export class RequestCreateComponent implements OnInit {
   ngOnInit(): void {
     this.loggedInUser = this.systemSvc.loggedInUser;
     this.systemSvc.checkLogin();
-    
+    this.request.userId = this.request.user.id;
     //set logged in user in request
     this.request.user = this.systemSvc.loggedInUser;    
   }
 
   save() {
+  this.request.userId = this.request.user.id;
     this.requestSvc.create(this.request).subscribe(
       resp => {
         this.request = resp as Request;
