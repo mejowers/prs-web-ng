@@ -23,10 +23,10 @@
         <tr *ngFor='let request of requests | sort:sortCriteria:sortOrder'>
             <td>{{ request.user.lastName+', '+request.user.firstName }}</td>
             <td>{{ request.description }}</td>
-            <td>{{ request.dateNeeded}}</td>
+            <td>{{ request.dateNeeded | date }}</td>
             <td>{{ request.status }}</td>
             <td>{{ request.total | currency }}</td>
-            <td>{{ request.submittedDate }}</td>
+            <td>{{ request.submittedDate | date }}</td>
             <td>
                 <a routerLink='/request-detail/{{request.id}}'>
                     <img width='20' height='20' src='assets/details.png' title='Request Details'>

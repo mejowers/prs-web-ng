@@ -40,7 +40,7 @@
             <td>{{ lineItem.product.name }}</td>
             <td>{{ lineItem.quantity }}</td>
             <td>{{ lineItem.product.price }}</td>
-            <td>{{ lineItem.quantity*lineItem.product.price }}</td>
+            <td>{{ lineItem.quantity*lineItem.product.price | currency }}</td>
         </tr>
     </tbody>
 </table>
