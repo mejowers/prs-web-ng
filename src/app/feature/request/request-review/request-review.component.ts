@@ -13,6 +13,7 @@ export class RequestReviewComponent implements OnInit {
 
   requests: Request[] = [];
   title: string = "Request Review";
+  user = new User;
   userId: number = 0;
   loggedInUser: User = new User();
 
